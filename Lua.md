@@ -362,171 +362,165 @@ These functions manage the debugger. See Lua Debugging.
 + loadPOFile: Loads a ".PO" file used for translation
 + translate: Returns a translation of the string, returns the same string if it can't be found
 + translateID: Returns a translation of the string ID
-### 
+### Files
 + getFileVersion: Returns the 64-bit file version,and a table that has split up the file version into major, minor, release and build
 + getFileList: Returns an indexed table with filenames
 + getDirectoryList: Returns an indexed table with directory names
-
-Structures
-registerStructureDissectOverride: same as onAutoGuess, but is called by the structure dissect window when the user chooses to let cheat engine guess the structure for them
-unregisterStructureDissectOverride: unregisters the structure dissect auto guess override
-registerStructureNameLookup: Registers a function to be called when dissect data asks the user for the name of a new structure define
-unregisterStructureNameLookup:
-
-Miscellaneous
-injectDll: Injects a dll
-shellExecute: Executes a given command
-executeCode: Executes a stdcall function with 1 parameter at the given address in the target process and wait for it to return
-executeCodeEx:
-executeCodeLocal: Executes a stdcall function with 1 parameter at the given address in the target process
-executeCodeLocalEx:
-onAPIPointerChange: Registers a callback when an api pointer is changed
-setAPIPointer: Sets the pointer of the given api to the given address
-md5memory: Returns a md5 sum calculated from the provided memory
-md5file: Returns a md5 sum calculated from the file
-getSystemMetrics: Retrieves the specified system metric or system configuration setting msdn.microsoft.com/en-us/library/windows/desktop/ms724385.aspx
-getTickCount: Returns the current tickcount since windows was started. Each tick is one millisecond
-getUserRegistryEnvironmentVariable: Returns the environment variable stored in the user registry environment
-setUserRegistryEnvironmentVariable: Sets the environment variable stored in the user registry environment
-broadcastEnvironmentUpdate: Call this when you've changed the environment variables in the registry
-getApplication: Returns the application object (the titlebar)
-getInternet: Returns an internet class object. The string provided will be the name of the client provided
-Classes
+### Structures
++ registerStructureDissectOverride: same as onAutoGuess, but is called by the structure dissect window when the user chooses to let cheat engine guess the structure for them
++ unregisterStructureDissectOverride: unregisters the structure dissect auto guess override
++ registerStructureNameLookup: Registers a function to be called when dissect data asks the user for the name of a new structure define
++ unregisterStructureNameLookup:
+### Miscellaneous
++ injectDll: Injects a dll
++ shellExecute: Executes a given command
++ executeCode: Executes a stdcall function with 1 parameter at the given address in the target process and wait for it to return
++ executeCodeEx:
++ executeCodeLocal: Executes a stdcall function with 1 parameter at the given address in the target process
++ executeCodeLocalEx:
++ onAPIPointerChange: Registers a callback when an api pointer is changed
++ setAPIPointer: Sets the pointer of the given api to the given address
++ md5memory: Returns a md5 sum calculated from the provided memory
++ md5file: Returns a md5 sum calculated from the file
++ getSystemMetrics: Retrieves the specified system metric or system configuration setting msdn.microsoft.com/en-us/library/windows/desktop/ms724385.aspx
++ getTickCount: Returns the current tickcount since windows was started. Each tick is one millisecond
++ getUserRegistryEnvironmentVariable: Returns the environment variable stored in the user registry environment
++ setUserRegistryEnvironmentVariable: Sets the environment variable stored in the user registry environment
++ broadcastEnvironmentUpdate: Call this when you've changed the environment variables in the registry
++ getApplication: Returns the application object (the titlebar)
++ getInternet: Returns an internet class object. The string provided will be the name of the client provided
+## Classes
 Besides the above functions, Cheat Engine also implements some classes.
-
-Addresslist: The addresslist class is a container for memory records
-Bitmap: Bitmap based Graphic object
-Brush: The brush class is part of the Canvas object. It's used to fill surfaces
-Button: The button class is a visual component in the shape of a button.
-ButtonControl: Common ancestor of several button like objects.
-Canvas: The canvas class is a graphical class. It allows you do draw lines, pictures, and text on top of other object. Usually used in onPaint events and other graphical events
-Calendar:
-CEForm:
-CheatComponent: The cheatcomponent class is the component used in Cheat Engine 5.x trainers
-CheckBox: The Checkbox is a visual component that lets the user click it and change state between checked, unchecked, and if possible, grayed
-Component : Base class for all components that need owner-owned functionality.
-Control : Base class for visible controls.
-Collection: The Collection class is an abstract class that the ListColumns class implements (And perhaps other classes as well)
-CollectionItem: Basic object that is managed by a Collection class
-ComboBox: The Combobox is like an edit field with a ListBox attached to it
-CriticalSection:
-CustomControl: Base class for windowed controls which paint themselves
-CustomType: The custom type is an convertor of raw data, to a human readable interpretation.
-D3DHOOK: The d3dhook functions provide a method to render graphics and text inside the game, as long as it is running in directx9, 10 or 11
-D3DHook_FontMap: A fontmap is a texture that contains extra data regarding the characters
-D3DHook_Texture: This class controls the texture in memory. Without a sprite to use it, it won't show
-D3Dhook_TextContainer: A d3dhook_sprite class draws a piece of text on the screen based on the used fontmap
-D3DHook_RenderObject: The renderobject is the abstract class used to control in what manner objects are rendered.
-D3DHook_Sprite: A d3dhook_sprite class is a visible texture on the screen
-Disassembler:
-Disassemblerview: The visual disassembler used in the memory view window
-DisassemblerviewLine:
-DissectCode:
-Edit: The Edit class is a visual component that lets the user type in data (Use control_getCaption to get the user input)
-Event:
-FileStream: The FileStream class is a Stream class that is linked to an open file on disk
-FileDialog:
-FindDialog:
-Font: Class that defines a font
-Form: Class that defines a window
-FoundList: The foundlist is an companion class to MemScan. It opens the current memscan's result file and provides an interface for reading out the addresses
-GenericHotkey: Lets you register hotkeys to Cheat Engine's internal hotkey handler
-Graphic: Base class for dealing with Graphic images (Abstract)
-GraphicControl: Class that supports simple lightweight controls that do not need the ability to accept keyboard input or contain other controls.
-GroupBox: The groupbox class is like a Panel, but then has a header on top
-Hexadecimal: The visual hexadecimal object used on the memory view window
-Hexadecimalview: The visual hexadecimal object used on the memory view window
-Icon:
-Image: The Image class is a visual component that lets you show an image
-Internet:
-JpegImage:
-Label: The Label class is a visual component that lets you display text
-LuaPipe: Abstract class that LuaPipeServer and LuaPipeclient inherit from
-LuaPipeClient: Class implementing a client that connects to a pipe
-LuaPipeServer: Class launching the server side of a pipe
-ListBox: The listbox class is a visual component with a list of selectable strings
-ListColumn: The listcolumn class is an implemented CollectionItem class which is used by the ListColumns class of the listview class
-ListColumns: The ListColumns class contains the Column class objects of a ListView object
-ListItem: The ListItem class object is an entry in a ListView
-ListItems: The listItems class is a container for the ListItem class objects of a Listview
-Listview: The listview class lets you have a listbox like component with resizable columns
-MainMenu: The menu at the top of a form
-Memo: The Memo class is a multiline edit field
-MemScan: The memscan class is the memory scanner of Cheat engine
-Menu: Common Class ancestor for the MainMenu and PopupMenu classes
-MenuItem: Holds the menuitems of a Menu, PopupMenu or even another MenuItem
-MemoryRecord: The Memoryrecord class object describes a Cheat Table's Cheat Entry.
-MemoryRecordHotkey: The memoryRecordHotkey class object is part of a MemoryRecord class. It's used as an interface to each individual hotkey inside a Cheat Table
-MemoryStream: The memorystream class is a Stream class that is stored completely in memory. Because it's a stream there are multiple functions that can work with it
-Memoryview: The memoryview class is the Memory view window of Cheat Engine. Use this as a basis to access the objects inside this window
-MultiReadExclusiveWriteSynchronizer:
-Object: Most basic class. All classes inherit from this class
-PaintBox:
-PageControl: This is an object that can hold multiple pages
-Panel: The Panel class is like a form which can contain visual components.
-Pen: The Pen class is part of the Canvas object. It's used to draw lines
-Picture: Container for the Graphic class
-PopupMenu: The menu that shows when rightclicking on an object
-PortableNetworkGraphic:
-ProgressBar: The progressbar class is a visual representation for a bar that can show the current progress on something
-RadioGroup: The radiogroup is like a GroupBox but autopopulated using the Items(Strings object)
-RasterImage: Base class for some graphical controls
-RIPRelativeScanner:
-OpenDialog: The OpenDialog class is used for selecting files to open.
-SaveDialog: The SaveDialog class is based on the OpenDialog class but is used to select a file for saving
-SelectDirectoryDialog:
-Semaphore:
-Settings: This class can be used to read out and set settings of cheat engine and of plugins, and store your own data
-Splitter: The Splitter class is a visual component that lets the user re-size neighboring components)
-Stringlist: Class that holds a list of strings
-Strings: Abstract class that some text based classes make use of
-StringStream:
-Structure:
-StructureElement:
-StructureFrm:
-structGroup:
-SymbolList: This class can be used to look up an address to a symbolname, and a symbolname to an address
-TabSheet: Part of a page control
-TableFile: Tablefiles are files stored into a Cheat Table. You can access the data of such a file using this class
-Thread:
-Timer: The timer class is an non visual component that when active triggers an onTimer event every few milliseconds, based on the given interval
-ToggleBox: The togglebox is like a button, but can stay down. Use with the checkbox methods
-TrackBar: The trackbar class is a slider you can drag arround and read/set the state
-TreeNode:
-TreeNodes:
-Treeview:
-WinControl: Base class for controls which can contain other controls.
-xmplayer:
-
-SQL Classes
-CustomConnection:
-Database:
-SQLConnection:
-SQLite3Connection:
-ODBCConnection:
-DBTransaction:
-SQLTransaction:
-Param:
-Params:
-Fields:
-Dataset:
-DBDataset:
-CustomBufDataset:
-CustomSQLQuery:
-SQLQuery:
-
-Class Helper Functions
-inheritsFromObject: Returns true if given any class
-inheritsFromComponent: Returns true if the given object inherits from the Component class
-inheritsFromControl: Returns true if the given object inherits from the Control class
-inheritsFromWinControl: Returns true if the given object inherits from the WinControl class
-createClass: Creates an object of the specified class (Assuming it's a registered class and has a default constructor)
-createComponentClass: Creates an object of the specified component inherited class
-Undefined Class Property Functions
++ Addresslist: The addresslist class is a container for memory records
++ Bitmap: Bitmap based Graphic object
++ Brush: The brush class is part of the Canvas object. It's used to fill surfaces
++ Button: The button class is a visual component in the shape of a button.
++ ButtonControl: Common ancestor of several button like objects.
++ Canvas: The canvas class is a graphical class. It allows you do draw lines, pictures, and text on top of other object. Usually used in onPaint events and other graphical events
++ Calendar:
++ CEForm:
++ CheatComponent: The cheatcomponent class is the component used in Cheat Engine 5.x trainers
++ CheckBox: The Checkbox is a visual component that lets the user click it and change state between checked, unchecked, and if possible, grayed
++ Component : Base class for all components that need owner-owned functionality.
++ Control : Base class for visible controls.
++ Collection: The Collection class is an abstract class that the ListColumns class implements (And perhaps other classes as well)
++ CollectionItem: Basic object that is managed by a Collection class
++ ComboBox: The Combobox is like an edit field with a ListBox attached to it
++ CriticalSection:
++ CustomControl: Base class for windowed controls which paint themselves
++ CustomType: The custom type is an convertor of raw data, to a human readable interpretation.
++ D3DHOOK: The d3dhook functions provide a method to render graphics and text inside the game, as long as it is running in directx9, 10 or 11
++ D3DHook_FontMap: A fontmap is a texture that contains extra data regarding the characters
++ D3DHook_Texture: This class controls the texture in memory. Without a sprite to use it, it won't show
++ D3Dhook_TextContainer: A d3dhook_sprite class draws a piece of text on the screen based on the used fontmap
++ D3DHook_RenderObject: The renderobject is the abstract class used to control in what manner objects are rendered.
++ D3DHook_Sprite: A d3dhook_sprite class is a visible texture on the screen
++ Disassembler:
++ Disassemblerview: The visual disassembler used in the memory view window
++ DisassemblerviewLine:
++ DissectCode:
++ Edit: The Edit class is a visual component that lets the user type in data (Use control_getCaption to get the user input)
++ Event:
++ FileStream: The FileStream class is a Stream class that is linked to an open file on disk
++ FileDialog:
++ FindDialog:
++ Font: Class that defines a font
++ Form: Class that defines a window
++ FoundList: The foundlist is an companion class to MemScan. It opens the current memscan's result file and provides an interface for reading out the addresses
++ GenericHotkey: Lets you register hotkeys to Cheat Engine's internal hotkey handler
++ Graphic: Base class for dealing with Graphic images (Abstract)
++ GraphicControl: Class that supports simple lightweight controls that do not need the ability to accept keyboard input or contain other controls.
++ GroupBox: The groupbox class is like a Panel, but then has a header on top
++ Hexadecimal: The visual hexadecimal object used on the memory view window
++ Hexadecimalview: The visual hexadecimal object used on the memory view window
++ Icon:
++ Image: The Image class is a visual component that lets you show an image
++ Internet:
++ JpegImage:
++ Label: The Label class is a visual component that lets you display text
++ LuaPipe: Abstract class that LuaPipeServer and LuaPipeclient inherit from
++ LuaPipeClient: Class implementing a client that connects to a pipe
++ LuaPipeServer: Class launching the server side of a pipe
++ ListBox: The listbox class is a visual component with a list of selectable strings
++ ListColumn: The listcolumn class is an implemented CollectionItem class which is used by the ListColumns class of the listview class
++ ListColumns: The ListColumns class contains the Column class objects of a ListView object
++ ListItem: The ListItem class object is an entry in a ListView
++ ListItems: The listItems class is a container for the ListItem class objects of a Listview
++ Listview: The listview class lets you have a listbox like component with resizable columns
++ MainMenu: The menu at the top of a form
++ Memo: The Memo class is a multiline edit field
++ MemScan: The memscan class is the memory scanner of Cheat engine
++ Menu: Common Class ancestor for the MainMenu and PopupMenu classes
++ MenuItem: Holds the menuitems of a Menu, PopupMenu or even another MenuItem
++ MemoryRecord: The Memoryrecord class object describes a Cheat Table's Cheat Entry.
++ MemoryRecordHotkey: The memoryRecordHotkey class object is part of a MemoryRecord class. It's used as an interface to each individual hotkey inside a Cheat Table
++ MemoryStream: The memorystream class is a Stream class that is stored completely in memory. Because it's a stream there are multiple functions that can work with it
++ Memoryview: The memoryview class is the Memory view window of Cheat Engine. Use this as a basis to access the objects inside this window
++ MultiReadExclusiveWriteSynchronizer:
++ Object: Most basic class. All classes inherit from this class
++ PaintBox:
++ PageControl: This is an object that can hold multiple pages
++ Panel: The Panel class is like a form which can contain visual components.
++ Pen: The Pen class is part of the Canvas object. It's used to draw lines
++ Picture: Container for the Graphic class
++ PopupMenu: The menu that shows when rightclicking on an object
++ PortableNetworkGraphic:
++ ProgressBar: The progressbar class is a visual representation for a bar that can show the current progress on something
++ RadioGroup: The radiogroup is like a GroupBox but autopopulated using the Items(Strings object)
++ RasterImage: Base class for some graphical controls
++ RIPRelativeScanner:
++ OpenDialog: The OpenDialog class is used for selecting files to open.
++ SaveDialog: The SaveDialog class is based on the OpenDialog class but is used to select a file for saving
++ SelectDirectoryDialog:
++ Semaphore:
++ Settings: This class can be used to read out and set settings of cheat engine and of plugins, and store your own data
++ Splitter: The Splitter class is a visual component that lets the user re-size neighboring components)
++ Stringlist: Class that holds a list of strings
++ Strings: Abstract class that some text based classes make use of
++ StringStream:
++ Structure:
++ StructureElement:
++ StructureFrm:
++ structGroup:
++ SymbolList: This class can be used to look up an address to a symbolname, and a symbolname to an address
++ TabSheet: Part of a page control
++ TableFile: Tablefiles are files stored into a Cheat Table. You can access the data of such a file using this class
++ Thread:
++ Timer: The timer class is an non visual component that when active triggers an onTimer event every few milliseconds, based on the given interval
++ ToggleBox: The togglebox is like a button, but can stay down. Use with the checkbox methods
++ TrackBar: The trackbar class is a slider you can drag arround and read/set the state
++ TreeNode:
++ TreeNodes:
++ Treeview:
++ WinControl: Base class for controls which can contain other controls.
++ xmplayer:
+### SQL Classes
++ CustomConnection:
++ Database:
++ SQLConnection:
++ SQLite3Connection:
++ ODBCConnection:
++ DBTransaction:
++ SQLTransaction:
++ Param:
++ Params:
++ Fields:
++ Dataset:
++ DBDataset:
++ CustomBufDataset:
++ CustomSQLQuery:
++ SQLQuery:
+### Class Helper Functions
++ inheritsFromObject: Returns true if given any class
++ inheritsFromComponent: Returns true if the given object inherits from the Component class
++ inheritsFromControl: Returns true if the given object inherits from the Control class
++ inheritsFromWinControl: Returns true if the given object inherits from the WinControl class
++ createClass: Creates an object of the specified class (Assuming it's a registered class and has a default constructor)
++ createComponentClass: Creates an object of the specified component inherited class
+### Undefined Class Property Functions
 Not all properties of all classes have been explicitly exposed to lua, but if you know the name of a property of a specific class you can still access them (assuming they are declared as published in the pascal class declaration)
-
-getPropertyList: Returns a StringList object containing all the published properties of the specified class
-setProperty: Sets the value of a published property of a class (Won't work for method properties)
-getProperty: Gets the value of a published property of a class (Won't work for method properties)
-setMethodProperty: Sets the method property to the specific function
-getMethodProperty: Returns a function you can use to call the original function
++ getPropertyList: Returns a StringList object containing all the published properties of the specified class
++ setProperty: Sets the value of a published property of a class (Won't work for method properties)
++ getProperty: Gets the value of a published property of a class (Won't work for method properties)
++ setMethodProperty: Sets the method property to the specific function
++ getMethodProperty: Returns a function you can use to call the original function
