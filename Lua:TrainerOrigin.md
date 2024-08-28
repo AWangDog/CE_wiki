@@ -5,7 +5,7 @@
 
 包含启动作弊引擎的修改器路径的变量(仅在作为修改器启动时设置)。
 ## 参见
-+ [lua](https://github.com/AWangDog/CE_lua/blob/main/lua.md)
++ [lua](https://github.com/AWangDog/CE_wiki/blob/main/Lua.md)
 + Script engine
 ## 相关变量
 + process
